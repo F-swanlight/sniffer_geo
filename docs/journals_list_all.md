@@ -22,12 +22,29 @@
 | 8 | Chemical Geology | 0009-2541 | 区 |
 | 9 | Journal of Structural Geology | 0191-8141 | 区 |
 | 10 | Tectonics | 0278-7407 | 区 |
+| 11 | Lithos | 0024-4937 | 区 |
+| 12 | Ore Geology Reviews | 0169-1368 | 区 |
+| 13 | Economic Geology | 0361-0128 | 区 |
+| 14 | Mineralium Deposita | 0026-4598 | 区 |
+| 15 | Journal of Petrology | 0022-3530 | 区 |
+| 16 | Contributions to Mineralogy and Petrology | 0010-7999 | 区 |
+| 17 | American Mineralogist | 0003-004X | 区 |
+| 18 | Geophysical Research Letters | 0094-8276 | 区 |
+| 19 | Journal of Volcanology and Geothermal Research | 0377-0273 | 区 |
+| 20 | Quaternary Science Reviews | 0277-3791 | 区 |
 
-*注：此模板文件显示了前10个期刊的示例结构。完整的575个期刊数据需要根据实际收集到的期刊信息进行填充。*
+*注：此模板文件显示了前20个期刊的示例结构。完整的575个期刊数据需要根据实际收集到的期刊信息进行填充。*
 
 ## 数据来源说明
 
 此期刊列表基于收集到的地学类期刊数据整理而成，所有期刊均标记为"区"类别，按编号1-575顺序排列。
+
+**当前状态**: 模板文件已创建，包含前20个知名地学期刊作为示例。需要提供完整的575个期刊数据（期刊名称和ISSN号）以完成数据填充。
+
+**数据要求**:
+- 期刊编号：1-575
+- 必填字段：期刊名称、ISSN号
+- 分类：统一标记为"区"
 
 ## 更新记录
 
