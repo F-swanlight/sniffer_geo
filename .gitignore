@@ -34,9 +34,11 @@ logs/
 *.log
 
 # Data
-data/
 *.json
 *.csv
+
+# Allow specific journal data files
+!data/journals_381_575.csv
 
 # IDE
 .vscode/
