@@ -1,11 +1,11 @@
-# 地质RSS监控系统 (Geo RSS Sniffer)
+# 地球科学RSS监控系统 (Geo RSS Sniffer)
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📋 项目简介
 
-地质RSS监控系统是一个自动化工具，用于监控国际主流地质科学期刊的RSS源，基于预设关键词筛选高质量文章，并每日自动推送到企业微信群。
+地球科学RSS监控系统是一个自动化工具，用于监控国际主流地质科学期刊的RSS源，基于预设关键词筛选高质量文章，并每日自动推送到企业微信群。
 
 ### 🎯 核心功能
 
