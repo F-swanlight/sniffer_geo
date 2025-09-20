@@ -38,6 +38,9 @@ data/
 *.json
 *.csv
 
+# Allow specific journal data files
+!data/journals_all.csv
+
 # IDE
 .vscode/
 .idea/
