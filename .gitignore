@@ -34,9 +34,9 @@ logs/
 *.log
 
 # Data
-data/
-*.json
-*.csv
+data/*.json
+data/statistics.json
+!data/journals_1-260.csv
 
 # IDE
 .vscode/
