@@ -15,6 +15,15 @@
 - **热点词汇统计**: 统计每日热门研究方向
 - **后台稳定运行**: 支持nohup后台运行和cron定时任务
 
+### 🚀 新增强化功能
+
+- **期刊分区评分系统**: 根据期刊影响因子和分区自动评分文章质量
+- **RSS源自动发现**: RSSSourceFinder类自动发现新的期刊RSS源
+- **动态短语提取**: 基于TF-IDF的热门趋势短语分析
+- **增强错误处理**: 带重试机制的稳定网络请求
+- **翻译支持**: 可选的中英文标题翻译功能
+- **详细统计数据**: 全面的使用统计和性能监控
+
 ### 📊 监控期刊范围
 
 - Nature Geoscience
@@ -63,6 +72,10 @@ cp config/config.py.example config/config.py
 
 5. **运行测试**
 ```bash
+# 运行增强版（推荐）
+python src/geo_daily_sniffer_with_zone_scoring.py
+
+# 或运行原版兼容模式
 python src/geo_daily_sniffer.py
 ```
 
@@ -88,6 +101,21 @@ KEYWORDS = [
     "天然氢", "natural hydrogen",
     # ... 更多关键词
 ]
+
+# 新增强化配置
+# Zone scoring settings
+ZONE_SCORING_ENABLED = True
+ZONE_WEIGHTS = {
+    1: 10.0,  # Top tier journals (Nature, Science)
+    2: 7.0,   # High impact journals
+    3: 4.0,   # Medium impact journals  
+    4: 2.0,   # Lower tier journals
+}
+
+# 动态短语提取设置
+DYNAMIC_PHRASE_EXTRACTION = True
+ENABLE_TRANSLATION = True
+ENABLE_DETAILED_STATS = True
 ```
 
 ## 📅 定时运行设置
@@ -98,15 +126,15 @@ KEYWORDS = [
 # 编辑crontab
 crontab -e
 
-# 添加每日7:00自动运行
-0 7 * * * /path/to/geo_rss_env/bin/python /path/to/sniffer_geo/src/geo_daily_sniffer.py >> /path/to/logs/sniffer.log 2>&1
+# 添加每日7:00自动运行（增强版）
+0 7 * * * /path/to/geo_rss_env/bin/python /path/to/sniffer_geo/src/geo_daily_sniffer_with_zone_scoring.py >> /path/to/logs/sniffer.log 2>&1
 ```
 
 ### 方法二: 后台持续运行
 
 ```bash
-# 使用nohup后台运行
-nohup python src/geo_daily_sniffer.py > logs/sniffer.log 2>&1 &
+# 使用nohup后台运行（增强版）
+nohup python src/geo_daily_sniffer_with_zone_scoring.py > logs/sniffer.log 2>&1 &
 
 # 查看运行状态
 tail -f logs/sniffer.log
@@ -120,15 +148,24 @@ tail -f logs/sniffer.log
 
 🔬 今日精选文章 (3篇):
 
-1. Carbonate platform evolution during the Cambrian explosion
+1. Carbonate platform evolution during the Cambrian explosion ⭐⭐⭐
 https://www.nature.com/articles/s41561-024-xxxxx
-摘要: 寒武纪大爆发期间碳酸盐岩台地演化的最新研究...
+   译: 寒武纪大爆发期间碳酸盐岩台地演化
+来源: Nature Geoscience | 分数: 15.2
+匹配关键词: carbonate, evolution
 
-2. Natural hydrogen seepage in ophiolite complexes
+2. Natural hydrogen seepage in ophiolite complexes ⭐⭐
 https://www.sciencemag.org/doi/10.1126/science.xxxxx
 摘要: 蛇绿岩杂岩中天然氢气渗漏的地球化学特征...
 
-【今日热点词汇排行】
+【今日热点短语】
+• carbonate platform (0.156)
+• hydrogen seepage (0.142)
+• geochemical signature (0.128)
+
+【统计信息】
+处理文章: 45
+RSS源访问: 21
 carbonate: 5
 hydrogen: 3
 geochemistry: 2
@@ -154,11 +191,14 @@ grep ERROR logs/sniffer.log
 
 ## 📈 扩展功能
 
-- [ ] 支持多个微信群推送
+- [x] ~~支持多个微信群推送~~ (已实现)
+- [x] ~~文章去重和相似度检测~~ (通过分区评分实现)
+- [x] ~~期刊质量评估~~ (已实现分区评分系统)
 - [ ] 添加邮件通知功能
 - [ ] Web界面管理关键词
-- [ ] 文章去重和相似度检测
 - [ ] 数据可视化dashboard
+- [ ] 更多语言翻译支持
+- [ ] 机器学习文章推荐
 
 ## 🤝 贡献指南
 

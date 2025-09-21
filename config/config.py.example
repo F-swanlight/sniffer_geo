@@ -1,0 +1,60 @@
+# 企业微信机器人Webhook地址
+WECHAT_WEBHOOK = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY_HERE"
+
+# RSS源列表 (可自定义添加，zone scoring将覆盖这些设置)
+RSS_FEEDS = [
+    "https://www.nature.com/ngeo.rss",
+    "https://www.sciencemag.org/rss/current.xml",
+    "https://www.nature.com/nature.rss",
+    "https://pubs.geoscienceworld.org/geology/pages/RSS",
+    "https://www.sciencedirect.com/journal/earth-and-planetary-science-letters/rss",
+]
+
+# 关键词配置 (支持正则表达式)
+KEYWORDS = [
+    # 中文关键词
+    "碳酸盐岩", "微生物矿化", "天然氢", "古气候", "沉积学", 
+    "构造地质", "岩石学", "地球化学", "古生物", "矿物学",
+    
+    # 英文关键词  
+    "carbonate", "microbialite", "natural hydrogen", "paleoclimate",
+    "sedimentology", "structural geology", "petrology", "geochemistry",
+    "paleontology", "mineralogy", "isotope", "geophysics",
+    "hydrogeology", "environmental geology", "marine geology",
+    
+    # 专业术语
+    "stromatolite", "biogeochemistry", "diagenesis", "metamorphism",
+    "volcanism", "seismology", "geochronology", "thermochronology"
+]
+
+# Zone scoring settings
+ZONE_SCORING_ENABLED = True
+ZONE_WEIGHTS = {
+    1: 10.0,  # Top tier journals (Nature, Science)
+    2: 7.0,   # High impact journals
+    3: 4.0,   # Medium impact journals  
+    4: 2.0,   # Lower tier journals
+}
+
+# 动态短语提取设置
+DYNAMIC_PHRASE_EXTRACTION = True
+MIN_PHRASE_LENGTH = 2
+MAX_PHRASE_LENGTH = 4
+TOP_PHRASES_COUNT = 20
+
+# 翻译设置
+ENABLE_TRANSLATION = True
+TRANSLATE_TO_CHINESE = True
+
+# 重试机制设置
+MAX_RETRIES = 3
+RETRY_DELAY = 2  # seconds
+BACKOFF_FACTOR = 2
+
+# 统计设置
+ENABLE_DETAILED_STATS = True
+STATS_RETENTION_DAYS = 30
+
+# 日志设置
+LOG_LEVEL = "INFO"
+LOG_FILE = "logs/sniffer.log"
