@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+配置文件示例
+请将此文件复制为 config.py 并填入您的实际配置信息
+"""
+
+# 企业微信机器人Webhook地址
+# 获取方式：在企业微信群中添加机器人，复制webhook地址
+WECHAT_WEBHOOK = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY_HERE"
+
+# RSS源列表
+RSS_FEEDS = [
+    # Nature Geoscience
+    "https://www.nature.com/ngeo.rss",
+    
+    # Science Magazine
+    "https://www.sciencemag.org/rss/current.xml",
+    
+    # Geology (GSA)
+    "https://pubs.geoscienceworld.org/rss/geology/current.xml",
+    
+    # Earth and Planetary Science Letters
+    "https://www.sciencedirect.com/science/journal/0012821X/rss",
+    
+    # Geochimica et Cosmochimica Acta
+    "https://www.sciencedirect.com/science/journal/00167037/rss",
+    
+    # Frontiers in Earth Science
+    "https://www.frontiersin.org/journals/earth-science/rss",
+    
+    # EOS
+    "https://eos.org/feed",
+    
+    # ArXiv - Earth and Planetary Astrophysics
+    "https://arxiv.org/rss/astro-ph.EP",
+    
+    # ArXiv - Geophysics
+    "https://arxiv.org/rss/physics.geo-ph",
+]
+
+# 关键词配置
+# 支持中英文关键词，会在文章标题和摘要中进行匹配
+KEYWORDS = [
+    # 碳酸盐岩相关
+    "碳酸盐岩", "carbonate", "limestone", "dolomite",
+    "carbonate platform", "carbonate reservoir", "carbonate rock",
+    
+    # 微生物矿化相关
+    "微生物矿化", "microbialite", "stromatolite", "thrombolite",
+    "microbial carbonate", "biofilm", "cyanobacteria",
+    
+    # 天然氢相关
+    "天然氢", "natural hydrogen", "hydrogen seepage", "hydrogen gas",
+    "serpentinization", "radiolysis", "abiotic hydrogen",
+    
+    # 地球化学相关
+    "地球化学", "geochemistry", "isotope", "同位素",
+    "stable isotope", "radiogenic isotope", "trace element",
+    
+    # 沉积学相关
+    "沉积学", "sedimentology", "depositional environment",
+    "sedimentary structure", "facies analysis",
+    
+    # 古生物学相关
+    "古生物学", "paleontology", "fossil", "化石",
+    "paleoenvironment", "extinction", "evolution",
+    
+    # 构造地质学相关
+    "构造地质学", "structural geology", "tectonics", "构造",
+    "fault", "fold", "deformation",
+    
+    # 矿物学相关
+    "矿物学", "mineralogy", "mineral", "矿物",
+    "crystal structure", "phase transition",
+    
+    # 岩石学相关
+    "岩石学", "petrology", "igneous", "metamorphic",
+    "火成岩", "变质岩", "岩浆",
+    
+    # 环境地质学相关
+    "环境地质", "environmental geology", "contamination",
+    "groundwater", "地下水", "pollution",
+    
+    # 海洋地质学相关
+    "海洋地质", "marine geology", "ocean", "海洋",
+    "seafloor", "hydrothermal", "热液",
+    
+    # 气候变化相关
+    "气候变化", "climate change", "paleoclimate", "古气候",
+    "global warming", "greenhouse gas",
+]
+
+# 高级配置选项
+CONFIG = {
+    # 请求超时设置（秒）
+    'REQUEST_TIMEOUT': 30,
+    
+    # RSS缓存时间（小时）
+    'RSS_CACHE_HOURS': 1,
+    
+    # 文章保留天数
+    'ARTICLE_RETENTION_DAYS': 30,
+    
+    # 最大推送记录数
+    'MAX_PUSH_RECORDS': 1000,
+    
+    # 请求重试次数
+    'MAX_RETRIES': 3,
+    
+    # 批次推送间隔（秒）
+    'BATCH_DELAY': 5,
+    
+    # 用户代理字符串
+    'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+}
